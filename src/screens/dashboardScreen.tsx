@@ -27,9 +27,12 @@ const DashboardScreen: React.FC = () => {
     const getData = async () => {
       try {
         setLoading(true);
-        const { data } = await axios.get('/api/users', {
-          headers: { Authorization: `${userInfo!.token}` },
-        });
+        const { data } = await axios.get(
+          'https://descriptive-bubble-production.up.railway.app/api/users',
+          {
+            headers: { Authorization: `${userInfo!.token}` },
+          }
+        );
         const sortedData = sortUserDataByMonth(data);
         const monthlyCounts = countUsersPerMonth(sortedData);
         setUsersData(monthlyCounts);
@@ -115,7 +118,7 @@ const DashboardScreen: React.FC = () => {
           </div>
         ) : (
           <div className="border-2 border-gray-800 rounded-lg p-4 text-red-500">
-            <Bar data={data} options={options} />
+            <Bar data={data} options={options} className="h-screen" />
           </div>
         )}
       </div>

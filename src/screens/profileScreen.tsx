@@ -48,7 +48,7 @@ const ProfileScreen = () => {
       dispatch({ type: 'UPDATE_REQUEST' });
       console.log(loadingUpdate);
       const { data } = await axios.put(
-        '/user/profile',
+        'https://descriptive-bubble-production.up.railway.app/user/profile',
         {
           name,
           email,

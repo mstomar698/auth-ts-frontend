@@ -25,7 +25,7 @@ const SignupScreen = () => {
       return;
     }
     try {
-      const { data } = await Axios.post('/auth/signup', {
+      const { data } = await Axios.post('https://descriptive-bubble-production.up.railway.app/auth/signup', {
         name,
         email,
         password,

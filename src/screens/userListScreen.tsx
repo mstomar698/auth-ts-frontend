@@ -76,9 +76,12 @@ export default function UserListScreen(): JSX.Element {
     const fetchData = async () => {
       try {
         dispatch({ type: 'FETCH_REQUEST' });
-        const { data } = await axios.get<User[]>(`/api/users`, {
-          headers: { Authorization: `${userInfo!.token}` },
-        });
+        const { data } = await axios.get<User[]>(
+          `https://descriptive-bubble-production.up.railway.app/api/users`,
+          {
+            headers: { Authorization: `${userInfo!.token}` },
+          }
+        );
         dispatch({ type: 'FETCH_SUCCESS', payload: data });
       } catch (err: any) {
         dispatch({
@@ -98,9 +101,12 @@ export default function UserListScreen(): JSX.Element {
     if (window.confirm(`Your are Deleteing "${user.name}"`)) {
       try {
         dispatch({ type: 'DELETE_REQUEST' });
-        await axios.delete(`/api/users/${user._id}`, {
-          headers: { Authorization: `${userInfo!.token}` },
-        });
+        await axios.delete(
+          `https://descriptive-bubble-production.up.railway.app/api/users/${user._id}`,
+          {
+            headers: { Authorization: `${userInfo!.token}` },
+          }
+        );
         toast.success('user deleted successfully');
         dispatch({ type: 'DELETE_SUCCESS' });
       } catch (err: any) {
