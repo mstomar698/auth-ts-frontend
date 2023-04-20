@@ -75,29 +75,94 @@ const ProfileScreen = () => {
   };
 
   return (
-    <div className="h-screen p-16 bg-gray-200">
+    // <div className="h-screen p-16 bg-gray-200">
+    //   <div className="mx-auto max-w-md border shadow-2xl p-8 rounded-lg">
+    //     <h1 className="my-3 text-3xl font-bold">User Profile</h1>{' '}
+    //     <form onSubmit={submitHandler} className="space-y-3">
+    //       {' '}
+    //       <div className="flex flex-col" id="name">
+    //         {' '}
+    //         <label className="font-medium" htmlFor="name">
+    //           Name
+    //         </label>{' '}
+    //         <input
+    //           title="name"
+    //           className="border border-gray-300 p-2 rounded"
+    //           value={name}
+    //           onChange={(e) => setName(e.target.value)}
+    //           required
+    //         />{' '}
+    //       </div>{' '}
+    //       <div className="flex flex-col" id="email">
+    //         {' '}
+    //         <label className="font-medium" htmlFor="email">
+    //           Email
+    //         </label>{' '}
+    //         <input
+    //           title="email"
+    //           className="border border-gray-300 p-2 rounded"
+    //           type="email"
+    //           value={email}
+    //           onChange={(e) => setEmail(e.target.value)}
+    //           required
+    //         />{' '}
+    //       </div>{' '}
+    //       <div className="flex flex-col" id="password">
+    //         {' '}
+    //         <label className="font-medium" htmlFor="password">
+    //           Password
+    //         </label>{' '}
+    //         <input
+    //           title="password"
+    //           className="border border-gray-300 p-2 rounded"
+    //           type="password"
+    //           onChange={(e) => setPassword(e.target.value)}
+    //         />{' '}
+    //       </div>{' '}
+    //       <div className="flex flex-col" id="confirmPassword">
+    //         {' '}
+    //         <label className="font-medium" htmlFor="confirmPassword">
+    //           Confirm Password
+    //         </label>{' '}
+    //         <input
+    //           title="confirmPassword"
+    //           className="border border-gray-300 p-2 rounded"
+    //           type="password"
+    //           onChange={(e) => setConfirmPassword(e.target.value)}
+    //         />{' '}
+    //       </div>{' '}
+    //       <div className="flex justify-center">
+    //         {' '}
+    //         <button
+    //           className="bg-blue-500 text-white py-2 px-4 rounded"
+    //           type="submit"
+    //         >
+    //           Update
+    //         </button>{' '}
+    //       </div>{' '}
+    //     </form>
+    //   </div>
+    // </div>
+    <div className="h-screen p-4 md:p-16 bg-gray-200">
       <div className="mx-auto max-w-md border shadow-2xl p-8 rounded-lg">
-        <h1 className="my-3 text-3xl font-bold">User Profile</h1>{' '}
+        <h1 className="my-3 text-3xl font-bold text-center">User Profile</h1>
         <form onSubmit={submitHandler} className="space-y-3">
-          {' '}
-          <div className="flex flex-col" id="name">
-            {' '}
+          <div className="flex flex-col">
             <label className="font-medium" htmlFor="name">
               Name
-            </label>{' '}
+            </label>
             <input
               title="name"
               className="border border-gray-300 p-2 rounded"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
-            />{' '}
-          </div>{' '}
-          <div className="flex flex-col" id="email">
-            {' '}
+            />
+          </div>
+          <div className="flex flex-col">
             <label className="font-medium" htmlFor="email">
               Email
-            </label>{' '}
+            </label>
             <input
               title="email"
               className="border border-gray-300 p-2 rounded"
@@ -105,41 +170,38 @@ const ProfileScreen = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-            />{' '}
-          </div>{' '}
-          <div className="flex flex-col" id="password">
-            {' '}
+            />
+          </div>
+          <div className="flex flex-col">
             <label className="font-medium" htmlFor="password">
               Password
-            </label>{' '}
+            </label>
             <input
               title="password"
               className="border border-gray-300 p-2 rounded"
               type="password"
               onChange={(e) => setPassword(e.target.value)}
-            />{' '}
-          </div>{' '}
-          <div className="flex flex-col" id="confirmPassword">
-            {' '}
+            />
+          </div>
+          <div className="flex flex-col">
             <label className="font-medium" htmlFor="confirmPassword">
               Confirm Password
-            </label>{' '}
+            </label>
             <input
               title="confirmPassword"
               className="border border-gray-300 p-2 rounded"
               type="password"
               onChange={(e) => setConfirmPassword(e.target.value)}
-            />{' '}
-          </div>{' '}
+            />
+          </div>
           <div className="flex justify-center">
-            {' '}
             <button
               className="bg-blue-500 text-white py-2 px-4 rounded"
               type="submit"
             >
               Update
-            </button>{' '}
-          </div>{' '}
+            </button>
+          </div>
         </form>
       </div>
     </div>
