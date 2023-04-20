@@ -120,7 +120,7 @@ export default function UserListScreen(): JSX.Element {
 
   return (
     <div className="h-screen p-8 bg-gray-200">
-      <div className="p-4 h-[550px] overflow-auto">
+      <div className="p-4 h-[550px] w-screen-min overflow-auto">
         <h1 className="text-2xl font-bold mb-4">Users</h1>
         {loadingDelete && <p className="text-center">Deleting...</p>}
         {loading ? (
@@ -139,7 +139,7 @@ export default function UserListScreen(): JSX.Element {
               </tr>
             </thead>
             <tbody>
-              {users.map((user: any) => (
+              {users.map((user: User) => (
                 <tr key={user._id} className="border-b border-gray-200">
                   <td className="p-2">{user._id}</td>
                   <td className="p-2">{user.name}</td>
@@ -147,13 +147,13 @@ export default function UserListScreen(): JSX.Element {
                   <td className="p-2">{user.isAdmin ? 'YES' : 'NO'}</td>
                   <td className="p-2">
                     <button
-                      className="bg-gray-300 hover:bg-gray-400 px-2 py-1 rounded mr-2"
+                      className="bg-gray-300 hover:bg-gray-400 px-2 py-1 rounded m-1"
                       onClick={() => navigate(`/admin/user/${user._id}`)}
                     >
                       Edit
                     </button>
                     <button
-                      className="bg-red-300 hover:bg-red-400 px-2 py-1 rounded"
+                      className="bg-red-300 hover:bg-red-400 px-2 py-1 rounded m-1"
                       onClick={() => deleteHandler(user)}
                     >
                       Delete

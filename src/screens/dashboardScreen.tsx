@@ -100,25 +100,76 @@ const DashboardScreen: React.FC = () => {
 
   const sum = usersData.reduce((acc, curr) => acc + curr, 0);
   return (
-    <div className="h-full p-8 bg-gray-200">
-      <div className="container mx-auto px-4 py-6">
-        <h1 className="text-2xl font-bold mb-4">Admin Dashboard</h1>
-        <div className="flex justify-between items-center">
-          <h2 className="text-lg font-bold mb-2">Total Users: {sum}</h2>
+    // <div className="h-full p-8 bg-gray-200">
+    //   <div className="container mx-auto px-4 py-6">
+    //     <h1 className="text-2xl max-sm:text-lg font-bold mb-4">
+    //       Admin Dashboard
+    //     </h1>
+    //     <div className="flex justify-between items-center">
+    //       <h2 className="text-lg max-sm:text-xs font-bold mb-2">
+    //         Total Users: {sum}
+    //       </h2>
+    //       <div className="flex items-center">
+    //         <FaUser className="mr-2" />
+    //         <p className="text-lg max-sm:text-xs font-bold m-0.5">
+    //           {userInfo!.name}
+    //         </p>
+    //       </div>
+    //     </div>
+    //     {loading ? (
+    //       <div className="h-screen p-32 bg-gray-50">Loading...</div>
+    //     ) : error ? (
+    //       <div className="h-screen items-center justify-center p-32 text-red-600">
+    //         {error}
+    //       </div>
+    //     ) : (
+    //       <div className="max-sm:h-screen max-md:h-screen h-full">
+    //         <div className="border-2  border-gray-800 rounded-lg p-4 text-red-500">
+    //           <Bar
+    //             data={data}
+    //             options={options}
+    //             width={window.innerWidth * 0.8}
+    //             height={window.innerHeight * 0.8}
+    //           />
+    //         </div>
+    //       </div>
+    //     )}
+    //   </div>
+    // </div>
+    <div className="h-full p-4 md:p-8 bg-gray-200">
+      <div className="container mx-auto px-2 md:px-4 py-4 md:py-6">
+        <h1 className="text-2xl max-sm:text-lg font-bold mb-2 md:mb-4">
+          Admin Dashboard
+        </h1>
+        <div className="flex flex-col sm:flex-row justify-between items-center mb-4 md:mb-6">
+          <h2 className="text-lg max-sm:text-base font-bold mb-2">
+            Total Users: {sum}
+          </h2>
           <div className="flex items-center">
             <FaUser className="mr-2" />
-            <p>{userInfo!.name}</p>
+            <p className="text-lg max-sm:text-base font-bold m-0.5">
+              {userInfo!.name}
+            </p>
           </div>
         </div>
         {loading ? (
-          <div className="h-screen p-32 bg-gray-50">Loading...</div>
+          <div className="h-screen p-8 bg-gray-50 flex items-center justify-center">
+            Loading...
+          </div>
         ) : error ? (
-          <div className="h-screen items-center justify-center p-32 text-red-600">
+          <div className="h-screen p-8 bg-gray-50 flex items-center justify-center text-red-600">
             {error}
           </div>
         ) : (
-          <div className="border-2 border-gray-800 rounded-lg p-4 text-red-500">
-            <Bar data={data} options={options} className="h-screen" />
+          <div className="h-full">
+            <div className="border-2 border-gray-800 rounded-lg p-4 text-red-500 h-full">
+              <Bar
+                data={data}
+                options={options}
+                width={window.innerWidth * 0.8}
+                height={window.innerHeight * 0.8}
+              />
+            </div>
           </div>
         )}
       </div>
