@@ -40,7 +40,7 @@ const SigninScreen = () => {
 
   return (
     <div
-      className="h-screen p-32"
+      className="h-screen p-6 md:p-32"
       style={{
         backgroundImage: `url(https://img.freepik.com/free-vector/sign-page-abstract-concept-illustration_335657-3875.jpg?w=740&t=st=1681932727~exp=1681933327~hmac=86e4f2068c479a33c5d14959fe96f93a714a130ebd0de03baf22f162f620bc67)`,
         backdropFilter: 'blur(25px)',
@@ -49,7 +49,7 @@ const SigninScreen = () => {
         backgroundRepeat: 'no-repeat',
       }}
     >
-      <div className="max-w-md mx-auto  p-6 border-2 hover:border-4 hover:border-gray-700 rounded shadow-xl ">
+      <div className="max-w-md mx-auto border-2 hover:border-4 hover:border-gray-700 rounded shadow-xl">
         <form onSubmit={submitHandler}>
           <div className="mb-4">
             <label
